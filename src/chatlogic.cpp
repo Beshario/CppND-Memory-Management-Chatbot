@@ -207,6 +207,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
             if (rootNode == nullptr)
             {
                 rootNode = *it; // assign current node to root
+                std::cout << "INFO : root nodes detected" << std::endl;
             }
             else
             {
@@ -218,7 +219,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     // add chatbot to graph root node
     _chatBot->SetRootNode(rootNode);
     rootNode->MoveChatbotHere(_chatBot);
-    
+    _chatBot = nullptr;
     ////
     //// EOF STUDENT CODE
 }
